@@ -1,0 +1,173 @@
+.todo-wrapper {
+  grid-column: 2;
+  display: flex;
+  justify-content: center;
+
+  .todo {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 70rem;
+    width: 100%;
+
+    input,
+    button {
+      appearance: none;
+      border: none;
+      outline: none;
+      font-family: inherit;
+    }
+
+    input {
+      background: none;
+      border-radius: 1rem;
+      padding: 1rem;
+      font-size: 2rem;
+      color: var(--col-white);
+      width: 0;
+    }
+
+    &__header,
+    &__body {
+      border-radius: 4px;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(15px);
+    }
+    &__header h2,
+    &__body h3 {
+      font: inherit;
+    }
+
+    form {
+      display: flex;
+      gap: 1rem;
+
+      @media only screen and (max-width: $bp-smaller) {
+        flex-direction: column;
+      }
+    }
+    form input[type="text"] {
+      flex: 1 1 auto;
+      width: auto;
+      background: rgba(0, 0, 0, 0.3);
+    }
+    form input[type="text"]::placeholder {
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    .tasks {
+      display: grid;
+      grid-row-gap: 1rem;
+
+      .task {
+        display: flex;
+        gap: 1rem;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 1rem;
+        transition: 0.5s;
+
+        @media only screen and (max-width: $bp-smaller) {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        &-inputs {
+          display: flex;
+          gap: 1rem;
+          flex: 1 1 auto;
+
+          @media only screen and (max-width: $bp-smaller) {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 4px;
+          }
+
+          input {
+            width: 100%;
+
+            &:not(:read-only) {
+              color: rgba(255, 255, 255, 0.3);
+            }
+          }
+        }
+      }
+    }
+
+    .no-task {
+      color: var(--col-white);
+      font-size: 2rem;
+      padding: 1rem 0;
+    }
+
+    // buttons
+    form input[type="submit"],
+    .edit,
+    .delete {
+      width: auto;
+      font-size: 2rem;
+      padding: 1rem;
+      font-weight: 600;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    form input[type="submit"]:hover,
+    .edit:hover,
+    .delete:hover {
+      opacity: 0.5;
+    }
+    form input[type="submit"]:active,
+    .edit:active,
+    .delete:active {
+      opacity: 0.2;
+    }
+    form input[type="submit"],
+    .edit {
+      background-image: linear-gradient(
+        to right,
+        var(--col-gold),
+        var(--col-orange)
+      );
+    }
+    .delete {
+      background-image: linear-gradient(
+        to right,
+        var(--col-red),
+        var(--col-rose)
+      );
+    }
+
+    // checkbox
+    .checkbox-wrapper {
+      height: 2rem;
+      width: 2rem;
+      cursor: pointer;
+      align-self: center;
+      margin-left: 1rem;
+
+      .checkbox {
+        display: none;
+
+        &:checked ~ .checkmark {
+          transform: rotate(45deg) translateY(-0.5rem);
+          height: 2rem;
+          width: 1rem;
+          border-color: var(--col-headings);
+          border-top-color: transparent;
+          border-left-color: transparent;
+          border-radius: 0;
+        }
+      }
+
+      .checkmark {
+        width: inherit;
+        height: inherit;
+        border: 2px solid var(--col-rose);
+        border-radius: 4px;
+        transition: all 0.3s;
+      }
+    }
+  }
+}

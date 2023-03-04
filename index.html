@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Todo App, coded by the Peach." />
+    <meta name="keywords" content="HTML, CSS, Sass, Javascript, Coding" />
+    <meta name="author" content="the Peach" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@200;300;400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="fav/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="fav/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="fav/favicon-16x16.png"
+    />
+    <link rel="manifest" href="fav/site.webmanifest" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
+
+    <title>Todo App</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <h1 class="header__quote">Build&nbsp;your success&nbsp;today</h1>
+      <div class="logos">
+        <div class="header__app-logo"><span>Todo</span>App</div>
+        <div class="header__author-logo">p.</div>
+      </div>
+    </header>
+
+    <main class="todo-wrapper">
+      <div class="todo">
+        <div class="todo__header">
+          <h2>Add Task</h2>
+          <form autocomplete="off">
+            <input
+              id="taskInput"
+              type="text"
+              placeholder="What are you planning?"
+            />
+            <input id="btnAddTask" type="submit" value="Add task" />
+          </form>
+        </div>
+        <div class="todo__body" id="taskContainer">
+          <h3>Tasks</h3>
+          <div class="tasks" id="taskList"></div>
+          <div id="noTask" class="no-task">
+            You don't have any tasks currently. Let's plan your future.
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="author">
+      <p>
+        Coded for you, by
+        <a href="https://github.com/Peac-h">the <span>Peach</span></a
+        >.
+      </p>
+      <div class="clock" id="currTime"></div>
+    </footer>
+  </body>
+</html>

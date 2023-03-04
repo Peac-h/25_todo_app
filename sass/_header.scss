@@ -1,0 +1,46 @@
+.header {
+  grid-column: 2;
+  padding: 1rem 0;
+  font-size: 3rem;
+
+  .logos {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__app-logo {
+    padding: 7rem 0 0 7rem;
+
+    span {
+      color: var(--col-text);
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      padding: 7rem 0 0 4rem;
+    }
+  }
+
+  &__author-logo {
+    margin-right: 4rem;
+    align-self: center;
+    padding: 0.7rem 1rem;
+    border: 2px solid var(--col-text);
+    border-radius: 50%;
+    color: var(--col-text);
+
+    @media only screen and (max-width: $bp-small) {
+      margin-right: 2rem;
+    }
+  }
+
+  &__quote {
+    text-align: center;
+    font-size: inherit;
+    font-weight: inherit;
+    font-size: 3.5rem;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 3rem;
+    }
+  }
+}
