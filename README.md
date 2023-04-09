@@ -1,25 +1,27 @@
-# Project 26 - Todo App (OOP Project)
+# Project 25 - Todo App (OOP Project)
 
-This is Javascript Todo App built in object oriented programming style, using JS ES6 Classes.
-
-The App stores todo list. Tasks can be added, removed, changed or marked as completed.
-
-The App stores all the receives data in the local storage and whenever revisiting the page renders exactly in the same condition as it was left.
+This is Javascript Todo App built using object oriented programming paradigm and ES6 Classes. Tasks can be added, removed, changed or marked as completed. The App stores all the receives data in the local storage and whenever revisiting the page renders exactly in the same condition as it was left.
 
 Responsive for all screen sizes.
 
-**This is my 26th project so far.**
+**This is my 25th project so far.**
 
 ## Checkout the live demo
 
 [Todo App]()
+
+![Todo App - Desktop]()
+
+![Todo App - Tablet]()
+
+![Todo App - Mobile]()
 
 ## Built with
 
 - html
 - css
 - sass
-- OOP style (ES6 Classes)
+- OOP (ES6 Classes)
 - vanilla javascript
 
 ## Author

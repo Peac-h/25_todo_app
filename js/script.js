@@ -101,49 +101,60 @@ class App {
       .querySelector(`[data-id="${id}"]`)
       .querySelector(".task-value");
 
-    // delete button
+    // call appropriate functions
     if (button.classList.contains("delete")) {
-      task.remove();
-      this.tasks.splice(index, 1);
-
-      this._setLocalStorage();
-
-      if (!taskList.childElementCount) taskContainer.append(noTask);
+      this._deleteTask(task, index);
     }
 
-    // edit button
     if (button.classList.contains("edit")) {
-      if (button.innerText === "edit") {
-        button.innerText = "save";
-        input.removeAttribute("readonly");
-        input.focus();
-      } else {
-        button.innerText = "edit";
-        input.setAttribute("readonly", "readonly");
-      }
-
-      item.content = input.value;
-
-      this._setLocalStorage();
+      this._editTask(button, input, item);
     }
 
-    // check input
     if (button.classList.contains("checkbox")) {
-      if (button.checked == 1) {
-        item.checked = true;
-
-        input.style.textDecoration = "line-through";
-
-        this._setLocalStorage();
-      } else {
-        item.checked = false;
-
-        input.style.textDecoration = "none";
-
-        this._setLocalStorage();
-      }
+      this._markCheckedTask(button, input, item);
     }
   };
+
+  _deleteTask(task, index) {
+    task.remove();
+
+    this.tasks.splice(index, 1);
+
+    this._setLocalStorage();
+
+    if (!taskList.childElementCount) taskContainer.append(noTask);
+  }
+
+  _editTask(button, input, item) {
+    if (button.innerText === "edit") {
+      button.innerText = "save";
+      input.removeAttribute("readonly");
+      input.focus();
+    } else {
+      button.innerText = "edit";
+      input.setAttribute("readonly", "readonly");
+    }
+
+    item.content = input.value;
+
+    this._setLocalStorage();
+  }
+
+  _markCheckedTask(button, input, item) {
+    if (button.checked == 1) {
+      item.checked = true;
+
+      input.style.textDecoration = "line-through";
+
+      this._setLocalStorage();
+    } else {
+      item.checked = false;
+
+      input.style.textDecoration = "none";
+
+      this._setLocalStorage();
+    }
+  }
 
   _setLocalStorage() {
     localStorage.setItem("tasks", JSON.stringify(this.tasks));
